@@ -2,7 +2,7 @@
 
 **TODO** is a web application that introduces you to the power, performance, and simplicity of [MariaDB](https://mariadb.com/products/).
 
-This project uses the MariaDB Node.js connector in combination with the [Sequelize object-relational mapping module](https://sequelize.org/) to connect to and communicate to a MariaDB database instance.
+This project uses the MariaDB Node.js connector in combination with the [Sequelize object-relational mapping module](https://sequelize.org/) to connect to and communicate to a [MariaDB database instance](https://github.com/mariadb-developers/mariadb-getting-started).
 
 <p align="center" spacing="10">
     <kbd>
