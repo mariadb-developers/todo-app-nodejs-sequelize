@@ -10,6 +10,15 @@ This project uses the MariaDB Node.js connector in combination with the [Sequeli
     </kbd>
 </p>
 
+This application is made of two parts:
+
+* Client
+    - web UI that communicates with REST endpoints available through an API app (see below).
+    - is a React.js project located in the [client](src/client) folder.
+* API
+    - uses the [MariaDB Node.js Connector](https://github.com/mariadb-corporation/mariadb-connector-nodejs) with [Sequelize](https://sequelize.org/) to connect to MariaDB.
+    - is a Node.js project located int the [api](src/api) folder.
+
 This README will walk you through the steps for getting the TODO web application up and running using MariaDB.
 
 # Table of Contents
@@ -19,7 +28,8 @@ This README will walk you through the steps for getting the TODO web application
 4. [Create the database and table](#schema)
 5. [Configure, build and run the app](#app)
     1. [Configure](#configure-app)
-    2. [Build and run](#build-run)
+    2. [Build and run the API app](#build-run-api)
+    3. [Build and run the Client app](#build-run-client)
 6. [Support and contribution](#support-contribution)
 7. [License](#license)
 
@@ -82,10 +92,10 @@ CREATE TABLE todo.tasks (
 This application is made of two parts:
 
 * Client
-    - communicates with the API.
+    - web UI that communicates with REST endpoints available through an API app (see below).
     - is a React.js project located in the [client](src/client) folder.
 * API
-    - uses the [MariaDB Node.js Connector](https://github.com/mariadb-corporation/mariadb-connector-nodejs) to connect to MariaDB.
+    - uses the [MariaDB Node.js Connector](https://github.com/mariadb-corporation/mariadb-connector-nodejs) with [Sequelize](https://sequelize.org/) to connect to MariaDB.
     - is a Node.js project located int the [api](src/api) folder.
 
 ### a.) Configure the app <a name="configure-app"></a>
@@ -144,27 +154,27 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
 });
 ```
 
-### b.) Build and run the app <a name="build-run-app"></a>
+### b.) Build and run the app <a name="build-run-api"></a>
 
-Within separate terminal windows perform the following steps:
+To start and run the API application you need to execute the following commands within the [root folder](src/api).
 
-1. Install the Node.js packages (dependendies) for the [client](src/client) and [api](src/api) apps using the `npm install` command.
+1. Install the Node.js packages (dependendies) for the app.
 
-_For example:_
 ```bash
-$ npm install ./src/client
-$ npm install ./src/api
+$ npm install
 ```
 
-2. Run the [client](src/client) and [api](src/api) apps using the `npm start` command.
+2. Run the the app, which will expose API endpoints via http://localhost:8080.
 
-_For example:_
 ```bash 
-$ npm start --prefix ./src/api
-$ npm start --prefix ./src/client
+$ npm start
 ``` 
 
-**Note:** You will need to use seperate terminals for the `client` and `api` apps.
+### c.) Build and run the [UI (Client) app](src/client) <a name="build-run-client"></a>
+
+Once the API project is running you can now communicate with the exposed endpoints directly (via HTTP requests) or with the application UI, which is contained with the [client](src/client) folder of this repo.
+
+To start the [client](src/client) application follow the instructions [here](https://github.com/mariadb-developers/todo-app-client).
 
 ## Support and Contribution <a name="support-contribution"></a>
 
