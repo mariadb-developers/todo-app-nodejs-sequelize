@@ -19,7 +19,7 @@ This application is made of two parts:
     - uses the [MariaDB Node.js Connector](https://github.com/mariadb-corporation/mariadb-connector-nodejs) with [Sequelize](https://sequelize.org/) to connect to MariaDB.
     - is a Node.js project located in the [api](src/api) folder.
 
-This README will walk you through the steps for getting the TODO web application up and running using MariaDB.
+This README will walk you through the steps for getting the `TODO` web application up and running using MariaDB.
 
 # Table of Contents
 1. [Requirements](#requirements)
