@@ -1,3 +1,5 @@
+> ⚠️ If you're new to using [Sequelize](https://sequelize.org/) with MariaDB be sure to check out the [quickstart repository](https://github.com/mariadb-developers/nodejs-sequelize-quickstart)!
+
 # TODO
 
 **TODO** is a web application that introduces you to the power, performance, and simplicity of [MariaDB](https://mariadb.com/products/).
